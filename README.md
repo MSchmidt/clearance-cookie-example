@@ -1,24 +1,17 @@
-# README
+# Clearance Cookie Example
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Small example app to demonstrate how clearance creates two cookies when used with ``cookie_domain`` option.
 
-Things you may want to cover:
+See issue #616.
 
-* Ruby version
+## Steps to reproduce
 
-* System dependencies
+1. set ``127.0.0.1 example.com`` in ``/etc/hosts``
+2. start ``rails server``
+3. visits ``http://example.com:3000``
+4. sign up and sign in
+5. open browser inspector to see two different cookies named ``remember_token``
+6. sign out
+7. see how only one cookie got removed. The other one sticks around causing some potential issues.
 
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+[![Screen Shot](screen_shot.png)](screen_shot.png)
